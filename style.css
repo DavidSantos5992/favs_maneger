@@ -1,0 +1,514 @@
+* {
+    padding: 0;
+    margin: 0;
+    transition: 0.1s;
+}
+
+:root {
+    --default-menu-background: linear-gradient(180deg, rgba(31, 16, 73, 0.8) -0.24%, rgba(0, 0, 0, 0.8) 100%), rgba(111, 105, 105, 0.8);
+    --default-button-background: ;
+    --default-button-hover: #d5d9e39d;
+
+    --default-confirm-button: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100.18%), rgba(143, 175, 212, 0.25);
+    --default-border-confirm-button: rgba(143, 175, 212, 0.5);
+
+    --default-cancel-button: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100.18%), rgba(182, 0, 55, 0.25);
+    --default-border-cancel-button: rgba(182, 0, 55, 0.5);
+
+    --default-title-color: linear-gradient(90deg, rgba(0, 0, 0, 0) 21.43%, rgba(0, 0, 0, 0.5) 100%), rgba(200, 219, 242, 0.9);
+
+    --default-font: 'Montserrat';
+    --default-bold-font: 'MontserratB';
+    --default-extra-bold-font: 'MontserratB-2';
+    --default-thin-font: 'MontserratX';
+    --default-font-color: #ffff;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(39, 40, 38);
+}
+
+#container .buySkinsContainer {
+    width: 36.04vw;
+    height: 42vw;
+    display: flex;
+  /*   background: red; */
+}
+
+#container .selectWeaponTypeContainer {
+    width: 3.28vw;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 5vw;
+    /* background: green; */
+}
+
+#container .selectWeaponType {
+    width: 2.6vw;
+    height: 2.6vw;
+    display: grid;
+    background:var(--default-menu-background);
+    border: 1px solid #C8C8C8;
+    border-radius: .26vw;
+    margin-bottom: .5vw;
+    
+}
+
+#container .selectWeaponType p {
+    font-size: 2vw;
+    font-weight: 500;
+    color: var(--default-bold-font);
+    color: var(--default-font-color);
+}
+
+
+#container .selectWeaponTypeContainer .selectWeaponType:nth-child(1) {
+    place-items: center;
+    margin-bottom: 2vw !important;
+}
+
+
+#container .selectWeaponType img {
+    width: 1.09vw;
+}
+
+#container .selectWeaponType:hover {
+    transition: .2s;
+    cursor: pointer;
+    box-shadow: 0 0 .5vw var(--default-button-hover);
+}
+
+#container .buySkins {
+    width: 32.8vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background: rgb(0, 98, 128); */
+
+}
+
+#container .buySkins header {
+    width: 32vw;
+}
+
+#container .buySkins header h1 {
+    font-family: var(--default-extra-bold-font);
+    font-weight: 100;
+    font-size: 1.56vw;
+    color: var(--default-font-color);
+    text-align: right;
+    letter-spacing: 0.05vw;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+#container .selectSkinsContainer {
+    width: 31vw;
+    height: 37vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--default-menu-background);
+    box-sizing: border-box;
+    padding: 1.35vw 0 3.59vw 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(0deg, rgba(166, 191, 255, 0) 0%, #A6BFFF 100%);
+}
+
+#container .selectSkinsContainer::-webkit-scrollbar {
+    width: .1vw;
+    background: #1B1B1B;
+    opacity: 0.9;
+    border-radius: 2.6vw;
+}
+
+#container .selectSkinsContainer::-webkit-scrollbar-thumb {
+    background: #8FAFD4;
+    border-radius: 2.6vw;
+}
+
+#container .selectSkinsContainer .selectSkins {
+    width: 27.05vw;
+    height: 6.04vw;
+    border-radius: .025vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: .5vw;
+}
+
+#container .selectSkins .selectSkinsBorder {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #6FA0FF80;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-mask-image: linear-gradient(rgb(0, 0, 0) 100%);
+    border-radius: .26vw;
+    mask-image: linear-gradient(to left, transparent 100%, rgba(0, 0, 0, 0) 100%);
+
+
+}
+
+#container .selectSkinsContainer .selectSkinsInfos {
+    width: 19vw;
+    height: 6.04vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding-top: .5vw;
+    z-index: 9;
+    position: relative;
+}
+
+#container .selectSkinsInfos h2 {
+    font-family: var(--default-thin-font);
+    font-weight: 700;
+    font-size: 1.2vw;
+    letter-spacing: .07vw !important;
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    letter-spacing: 0.05vw;
+    margin:.5vw 0;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: capitalize;
+}
+
+#container .selectSkinsInfos h2 img {
+    width: 1vw;
+    height: 1vw;
+    position: absolute;
+    top: .5vw;
+    left: .5vw;
+}
+
+#container .selectSkinsInfos h2 img:hover {
+   transition: .2;
+   cursor: pointer;
+   transform: scale(1.2);
+}
+
+/* 
+#container .selectSkinsInfos h3 {
+
+    font-family: var(--default-thin-font);
+    font-weight: 400;
+    font-size: 150px !important;
+    line-height: .62vw;
+    text-align: right;
+    letter-spacing: 0.05vw;
+    color: rgba(234, 7, 7, 0.9);
+    margin: 0 0 .5vw 0px;
+}
+ */
+#container .selectSkinsInfos h4 {
+    font-family: var(--default-font);
+    font-weight: 700;
+    font-size: 13px;
+    line-height: .72vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    letter-spacing: 0.05vw;
+    text-transform: capitalize;
+}
+
+/* raridade das armas */
+
+.commonRarity {
+    color: rgba(234, 255, 200, 0.9);
+}
+
+.rareRarity {
+    color: #00A3FFE5;
+}
+
+.legendaryRarity {
+    color: #FF38EBE5;
+}
+
+#container .selectSkinsInfos h4 img {
+    width: .52vw;
+    margin-right: .5vw;
+}
+
+#container .selectSkins .selectSkinPhoto {
+    width: 10vw;
+    height: 6.04vw;
+    background: linear-gradient(90deg, rgba(51, 51, 51, 0.03) 0%, rgba(109, 3, 176, 0.926) 100%), rgba(28, 27, 27, 0.325);
+    border-radius: .26vw;
+    display: grid;
+    place-items: center;
+}
+
+#container .selectSkins .selectSkinPhoto img {
+    width: 1.8vw;
+    height: 1.8vw;
+}
+
+#modalContainer {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modalInfosContainer { 
+    width: 33vw;
+    height: 20vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalInfos {
+    width: 7.5vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background: linear-gradient(0deg, rgba(30, 3, 25, 0.744) 0%, rgba(109, 3, 176, 0.926) 100%), rgba(28, 27, 27, 0.325);
+}
+
+.modalInfos h1 {
+    font-family: var(--default-bold-font);
+    font-size: 1vw;
+    font-weight: 100;
+    letter-spacing: .07vw;
+    text-transform: capitalize;
+    color: var(--default-font-color);
+    margin-top: 1vw;
+}
+
+.modalInfos h2 {
+    font-family: var(--default-font);
+    font-size: 1vw;
+    font-weight: 500;
+    letter-spacing: .07vw;
+    text-transform: capitalize;
+    margin: 1vw 0;
+}
+
+.modalInfos h2:nth-child(2) {
+    color: rgba(234, 255, 200, 0.9);
+}
+
+.modalInfos h2:hover {
+    transition: .1s;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.modalInfos h2:nth-child(3) {
+    color: #00A3FFE5;
+
+}
+
+.modalInfos h2:nth-child(4) {
+    color: #FF38EBE5;
+
+}
+
+#modalContainer .modal {
+    width: 25vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:  linear-gradient(0deg, rgba(30, 3, 25, 0.744) 0%, rgba(109, 3, 176, 0.926) 100%), rgba(28, 27, 27, 0.325);
+    border-radius: 10px;
+}
+
+#modalContainer .modal h1 {
+    font-size: 1vw;
+    font-family: var(--default-font);
+    color: var(--default-font-color);
+    text-transform: uppercase;
+}
+
+#modalContainer label {
+    width: 100%;
+    height: 4.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+#modalContainer label input {
+    width: 80%;
+    height: 2vw;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: var(--default-menu-background);
+    font-size: 1vw;
+    font-family: var(--default-font);
+    text-transform: capitalize;
+    color: var(--default-font-color);
+    text-align: center;
+}
+
+
+#modalContainer .buttonContainer {
+    width: 100%;
+    height: 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#modalContainer .button {
+    width: 45%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    outline: none;
+    border: none;
+    border-radius: .5vw;
+    background: rgba(160, 6, 221, 0.51);
+}
+
+#modalContainer button:focus {
+    border: solid 2px rgba(160, 6, 221, 0.716);
+}
+
+#modalContainer .button:hover {
+    transition: .1s;
+    box-shadow: 0 0 15px rgba(160, 6, 221, 0.51);
+}
+
+#modalContainer .button:nth-child(3) {
+    background: rgba(255, 5, 5, 0.51);
+}
+
+#modalContainer .button:nth-child(3):hover {
+    transition: .1s;
+    box-shadow: 0 0 15px rgba(255, 5, 5, 0.51)
+}
+
+#modalContainer button:nth-child(3):focus {
+    border: solid 2px rgba(255, 5, 5, 0.51);
+}
+
+
+.button p {
+    font-size: 1vw;
+    font-family: var(--default-thin-font);
+    color: var(--default-font-color);
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: .07vw;
+}
+
+.modalErrorContainer {
+    width: 30vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 2vw 0;
+    background:  linear-gradient(0deg, rgba(30, 3, 25, 0.744) 0%, rgba(109, 3, 176, 0.926) 100%), rgba(28, 27, 27, 0.325);
+    border-radius: 10px;
+}
+
+.modalErrorContainer h1 {
+    font-family: var(--default-font);
+    letter-spacing: 0.07vw;
+    color: var(--default-font-color);
+    font-weight: 100;
+    text-transform: uppercase;
+    font-size: 2vw;
+    text-align: center;
+}
+
+
+/* ------------------------------------ */
+
+/* confirmar */
+.confirm {
+    background: var(--default-confirm-button);
+    border: 1px solid var(--default-border-confirm-button);
+    border-radius: .26vw;
+}
+
+.confirm:hover {
+    transition: .1s;
+    box-shadow: 0 0 .78vw var(--default-border-confirm-button);
+}
+
+/* cancelar */
+
+.cancel {
+    background: var(--default-cancel-button);
+    border: 1px solid var(--default-border-cancel-button);
+    border-radius: .26vw;
+
+}
+
+.cancel:nth-child(2) {
+    margin-left: .55vw;
+}
+
+
+.cancel:hover {
+    transition: .1s;
+    box-shadow: 0 0 .78vw var(--default-border-cancel-button);
+}
+
+/* ------------------------------------ */
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url(assets/Montserrat/MontserratRegular.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratX';
+    src: url(assets/Montserrat/montserrat-extralight.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratH';
+    src: url(assets/Montserrat/MontserratHairline.otf);
+}
+
+@font-face {
+    font-family: 'MontserratB';
+    src: url(assets/Montserrat/MontserratBold.ttf);
+}
+
+@font-face {
+    font-family: 'MontserratB-2';
+    src: url(assets/Montserrat/MontserratExtraBold.otf);
+}
