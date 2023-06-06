@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nui-skins</title>
+    <title>favs maneger</title>
 </head>
 
 <body>
@@ -15,7 +15,8 @@
 
         <div id="container">
 
-            <div v-if="screen == 0" class="buySkinsContainer">
+            <div v-if="screen == 0" class="buySkinsContainer slide-in-blurred-top">
+            
                 <div class="selectWeaponTypeContainer">
 
                     <div @click="insertModal(1,true)" class="selectWeaponType">
@@ -27,7 +28,7 @@
                 <div class="buySkins">
 
                     <header>
-                        <h1>Ordenação alfabetica e Prioridade para favoritos</h1>
+                        <h1>favs maneger</h1>
                     </header>
 
                     <div class="selectSkinsContainer">
@@ -71,7 +72,7 @@
 
         </div>
 
-        <div v-if="modal" id="modalContainer">
+        <div v-if="modal" class="slide-in-blurred-top" id="modalContainer">
 
             <div v-if="modalActive == 1" class="modalInfosContainer">
 

@@ -7,9 +7,9 @@ var app = new Vue({
 
         screen: 0,
 
-        modalActive: 0,
+        modalActive: 1,
 
-        modal: false,
+        modal: true,
 
         forSale: [
             {
@@ -131,6 +131,11 @@ var app = new Vue({
         },
 
         closeUI() {
+            let el = document.querySelector('buySkinsContainer')
+
+           /*  el.classList.remove("slide-in-blurred-top"); */
+            /* el.classList.add("slide-out-top"); */
+            console.log(el)
             this.modal = false
         },
 
@@ -176,10 +181,17 @@ var app = new Vue({
         this.sortPosition(this.forSale)
 
         document.addEventListener('keydown', (event) => {
+
             const keyName = event.key;
 
-            if (app.modal && keyName == 'Escape') {
-                app.closeUI()
+            if (keyName == 'Escape') {
+
+                if (app.modal) {
+                    this.modal = false
+                    this.modalActive = 0
+                } else {
+                     app.closeUI()
+                }
             }
 
         });
